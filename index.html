@@ -78,9 +78,9 @@
             text-align: left;
         }
         h2 {
-            font-size: 60px;
+            font-size: 70px;
             margin: 0;
-            color: white;
+            color: #FFF1A3;
         }
         input[type="email"] {
             padding: 10px;
@@ -88,6 +88,10 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             margin-top: 10px;
+        }
+        input[type="email"]::placeholder {
+            color: lightgrey;
+            font-style: italic;
         }
         button {
             padding: 10px 20px;
@@ -127,36 +131,39 @@
 <body>
 <div class="container">
     <div class="rectangle">
-        <button class="close-button" onclick="skipForm()">✖</button>
+        <button class="close-button" onclick="location.href='/skip.html'">✖</button>
         <div class="content-wrapper">
             <div class="picture-wrapper">
                 <div class="circle"></div> <!-- Circle with cover1.png image -->
             </div>
             <div class="content-right">
                 <h2>Keep in touch!</h2>
-                <input type="email" id="email" placeholder="Enter your email address">
-                <button onclick="submitForm()">Subscribe</button>
+                <form id="subscribeForm" action="/subscribe" method="POST" onsubmit="return submitForm(event);">
+                    <input type="email" id="email" name="email" placeholder="yourmail@mail.com" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
         <div class="divider"></div>
         <div class="footnote">
-            <p>© 2024 Design and built by Edward ST Lee</p>
+            <h4 style="font-family:Times New Roman"><I><B>"A masterpiece of creation, forged in the fires of inspiration, a testament to human ingenuity."</B></I></h4>
+            <p>Copyright © Edward ST Lee, 2024</p>
+            <p>All rights reserved</p>
+            <p>Design and Build by Edward ST Lee</p>
         </div>
     </div>
 </div>
 
 <script>
-    function submitForm() {
+    function submitForm(event) {
+        event.preventDefault(); // Prevent the default form submission
         var email = document.getElementById('email').value;
         if (email) {
-            window.location.href = "thank-you.html";
+            // Proceed with form submission to the server
+            document.getElementById('subscribeForm').submit();
         } else {
             alert("Please enter a valid email address.");
         }
-    }
-
-    function skipForm() {
-        window.location.href = "skip-page.html";
     }
 </script>
 </body>
