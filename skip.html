@@ -63,7 +63,7 @@
 <div class="container">
     <div class="rectangle">
         <h1>You have skipped the subscription.</h1>
-        <p>Redirecting to the main page in 5 seconds...</p>
+        <p id="countdown">Redirecting in 5 seconds...</p>
         <div class="divider"></div>
         <div class="footnote">
             <p>Copyright © Edward ST Lee, 2024</p>
@@ -74,9 +74,18 @@
 </div>
 
 <script>
-    setTimeout(function() {
-        window.location.href = "https://payhip.com/edwardstlee";
-    }, 5000);
+    let countdownValue = 5; // Start countdown from 5 seconds
+    const countdownElement = document.getElementById('countdown');
+
+    const countdownInterval = setInterval(function() {
+        if (countdownValue <= 0) {
+            clearInterval(countdownInterval);
+            window.location.href = "https://payhip.com/edwardstlee"; // Redirect to main page
+        } else {
+            countdownElement.textContent = `Redirecting in ${countdownValue} second${countdownValue !== 1 ? 's' : ''}...`;
+        }
+        countdownValue--;
+    }, 1000);
 </script>
 </body>
 </html>
