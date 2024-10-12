@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sad to see you go</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3e5f5;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+        }
+        h1 {
+            color: #9c27b0;
+        }
+        p {
+            color: #4a148c;
+        }
+    </style>
+</head>
+<body>
+    <h1>It's sad that you're leaving...</h1>
+    <p>We would love to stay in touch, but no worries! You'll be redirected to the main page soon.</p>
+    <p id="countdown">Redirecting in 5 seconds...</p>
+
+    <script>
+        let countdownNumber = 5;
+        const countdownElement = document.getElementById("countdown");
+
+        function updateCountdown() {
+            countdownNumber--;
+            countdownElement.innerText = `Redirecting in ${countdownNumber} seconds...`;
+            if (countdownNumber === 0) {
+                window.location.href = "index.html"; // Redirect to main page
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
