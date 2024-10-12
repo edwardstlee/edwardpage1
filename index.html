@@ -138,7 +138,7 @@
             </div>
             <div class="content-right">
                 <h2>Keep in touch!</h2>
-                <form action="https://handlesubs.sengtailee.workers.dev/" method="POST">
+                <form id="subscription-form" action="https://handlesubs.sengtailee.workers.dev/" method="POST">
                     <input type="email" id="email" name="email" placeholder="yourmail@mail.com" required>
                     <button type="submit">Subscribe</button>
                 </form>
@@ -155,19 +155,17 @@
 </div>
 
 <script>
-    // No longer needed since form handles submission
-    // function submitForm() {
-    //     var email = document.getElementById('email').value;
-    //     if (email) {
-    //         window.location.href = "thank-you.html";
-    //     } else {
-    //         alert("Please enter a valid email address.");
-    //     }
-    // }
+    document.getElementById('subscription-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
 
-    // function skipForm() {
-    //     window.location.href = "skip-page.html";
-    // }
+        var email = document.getElementById('email').value;
+        if (email) {
+            // Add any validation here if needed
+            this.submit(); // Submit the form if the email is valid
+        } else {
+            alert("Please enter a valid email address.");
+        }
+    });
 </script>
 </body>
 </html>
