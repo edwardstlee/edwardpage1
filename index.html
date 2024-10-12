@@ -3,106 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Opt-In Page</title>
+    <title>Join Us</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f3e5f5;
-            text-align: center;
+            font-family: "Times New Roman", serif;
+            background-color: #d6b3e6;
             margin: 0;
             padding: 0;
         }
         .container {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding: 20px;
+            height: 100vh;
+            text-align: center;
         }
-        .theme-image {
-            width: 100%;
-            max-width: 600px;
+        .rectangle {
+            background-color: #ffffff;
             border-radius: 10px;
+            padding: 30px;
+            width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
-        .opt-in-box {
-            background-color: #9c27b0;
-            padding: 20px;
-            border-radius: 10px;
-            color: white;
-            margin-top: 20px;
-            max-width: 500px;
+        .circle {
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            background-image: url('your-image-path.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .content-right {
+            display: inline-block;
             text-align: left;
+            margin-left: 20px;
+            vertical-align: top;
         }
-        .opt-in-box h2 {
-            font-size: 28px;
-            margin: 0 0 10px;
+        h2 {
+            font-size: 24px;
+            margin: 0;
         }
-        .opt-in-box input[type="email"] {
+        input[type="email"] {
+            padding: 10px;
+            width: 90%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #7048e8;
+            color: white;
+            cursor: pointer;
             width: 100%;
-            padding: 10px;
-            border-radius: 5px;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
             border: none;
-            margin-bottom: 10px;
-        }
-        .opt-in-box label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .opt-in-box input[type="checkbox"] {
-            margin-right: 10px;
-        }
-        .opt-in-box button, .skip-btn {
-            background-color: #fff;
-            color: #9c27b0;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
+            font-size: 20px;
             cursor: pointer;
         }
-        .opt-in-box button:hover, .skip-btn:hover {
-            background-color: #e1bee7;
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
         }
-        .skip-btn {
-            margin-top: 20px;
+        .footnote {
+            margin-top: 30px;
+        }
+        .footnote p {
+            font-size: 14px;
+        }
+        .divider {
+            margin-top: 30px;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <img src="book cover pic 2000x2000.png" alt="Theme Image" class="theme-image">
-
-        <div class="opt-in-box">
-            <h2>Keep in touch!</h2>
-            <p>Enter your email to receive the latest updates, news, and more!</p>
-            <form id="emailForm" action="thankyou.html">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your email">
-
-                <label for="interests">What interests you?</label>
-                <input type="checkbox" id="news" name="interests" value="news"> News and updates<br>
-                <input type="checkbox" id="discounts" name="interests" value="discounts"> Discounts and sales<br>
-                <input type="checkbox" id="events" name="interests" value="events" checked> In-person events
-
-                <button type="submit">Get on the list</button>
-            </form>
-
-            <button class="skip-btn" id="skipButton">Skip</button>
+<div class="container">
+    <div class="rectangle">
+        <button class="close-button" onclick="skipForm()">✖</button>
+        <div style="display: flex; align-items: center;">
+            <div class="circle"></div>
+            <div class="content-right">
+                <h2>Keep in touch!</h2>
+                <input type="email" id="email" placeholder="Enter your email address">
+                <button onclick="submitForm()">Subscribe</button>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="footnote">
+            <p>© 2024 Design and built by Edward ST Lee</p>
         </div>
     </div>
+</div>
 
-    <script>
-        document.getElementById("emailForm").addEventListener("submit", function (event) {
-            event.preventDefault();  // Prevent default form submission
+<script>
+    function submitForm() {
+        var email = document.getElementById('email').value;
+        if (email) {
+            window.location.href = "thank-you.html";
+        } else {
+            alert("Please enter a valid email address.");
+        }
+    }
 
-            // Handle form logic here if needed
-
-            window.location.href = "thankyou.html"; // Redirect to thank you page
-        });
-
-        document.getElementById("skipButton").addEventListener("click", function () {
-            window.location.href = "skip.html"; // Redirect to skip page
-        });
-    </script>
-
+    function skipForm() {
+        window.location.href = "skip-page.html";
+    }
+</script>
 </body>
 </html>

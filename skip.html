@@ -3,41 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sad to see you go</title>
+    <title>We're Sad to See You Go</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f3e5f5;
+            background-color: #ffe6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             text-align: center;
-            margin: 0;
-            padding: 50px;
         }
-        h1 {
-            color: #9c27b0;
+        .message-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        p {
-            color: #4a148c;
+        footer {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>It's sad that you're leaving...</h1>
-    <p>We would love to stay in touch, but no worries! You'll be redirected to the main page soon.</p>
-    <p id="countdown">Redirecting in 5 seconds...</p>
+<div class="message-box">
+    <h2>We're sad you didn't subscribe!</h2>
+    <p>We hope you'll reconsider next time.</p>
+    <p>You will be redirected to the main page in <span id="countdown">5</span> seconds.</p>
+</div>
 
-    <script>
-        let countdownNumber = 5;
-        const countdownElement = document.getElementById("countdown");
+<footer>
+    <p>© 2024 Design and built by Edward ST Lee</p>
+</footer>
 
-        function updateCountdown() {
-            countdownNumber--;
-            countdownElement.innerText = `Redirecting in ${countdownNumber} seconds...`;
-            if (countdownNumber === 0) {
-                window.location.href = "index.html"; // Redirect to main page
-            }
+<script>
+    var countdownElement = document.getElementById("countdown");
+    var countdownValue = 5;
+
+    var countdownInterval = setInterval(function() {
+        countdownValue--;
+        countdownElement.innerHTML = countdownValue;
+        if (countdownValue === 0) {
+            clearInterval(countdownInterval);
+            window.location.href = "main-page.html";
         }
-
-        setInterval(updateCountdown, 1000);
-    </script>
+    }, 1000);
+</script>
 </body>
 </html>
