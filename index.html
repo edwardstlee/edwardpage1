@@ -19,32 +19,68 @@
             text-align: center;
         }
         .rectangle {
-            background-color: #ffffff;
+            background-color: #994EA1;
             border-radius: 10px;
             padding: 30px;
-            width: 400px;
+            width: 90%; /* Fitting to 90% of the screen width */
+            height: 70%; /* Increased height to 70% of the screen */
+            max-width: 900px; /* Adjust this for larger screens */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #d6b3e6;
+            border: 2px solid #994EA1;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .close-button:hover {
+            background-color: #994EA1;
+            color: white;
+        }
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            height: 90%; /* Stretch content to fill 90% of the rectangle height */
+        }
+        .picture-wrapper {
+            width: 60%; /* 60% of the rectangle width */
+            height: 100%; /* Full height of the rectangle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .circle {
             background-color: #f0f0f0;
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            display: inline-block;
-            background-image: url('your-image-path.jpg');
+            width: 90%; /* Cover most of the container width */
+            height: 90%; /* Cover most of the container height */
+            background-image: url('cover1.png'); /* Marked: Image reference here */
             background-size: cover;
             background-position: center;
         }
         .content-right {
-            display: inline-block;
+            width: 40%; /* Remaining 40% of the rectangle */
+            padding-left: 20px;
             text-align: left;
-            margin-left: 20px;
-            vertical-align: top;
         }
         h2 {
-            font-size: 24px;
+            font-size: 60px;
             margin: 0;
+            color: white;
         }
         input[type="email"] {
             padding: 10px;
@@ -61,16 +97,11 @@
             background-color: #7048e8;
             color: white;
             cursor: pointer;
-            width: 100%;
+            width: 50%;
+            transition: background-color 0.3s;
         }
-        .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
+        button:hover {
+            background-color: #4e29b4; /* Darker color for hover */
         }
         footer {
             position: absolute;
@@ -84,6 +115,7 @@
         }
         .footnote p {
             font-size: 14px;
+            color: white;
         }
         .divider {
             margin-top: 30px;
@@ -96,8 +128,10 @@
 <div class="container">
     <div class="rectangle">
         <button class="close-button" onclick="skipForm()">✖</button>
-        <div style="display: flex; align-items: center;">
-            <div class="circle"></div>
+        <div class="content-wrapper">
+            <div class="picture-wrapper">
+                <div class="circle"></div> <!-- Circle with cover1.png image -->
+            </div>
             <div class="content-right">
                 <h2>Keep in touch!</h2>
                 <input type="email" id="email" placeholder="Enter your email address">
