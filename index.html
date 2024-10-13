@@ -138,15 +138,15 @@
             </div>
             <div class="content-right">
                 <h2>Keep in touch!</h2>
-                <form id="subscription-form">
-                    <input type="text" name="inputText" id="inputText" placeholder="Type something..." required>
-                    <button type="submit">Submit</button>
+                <form id="subscription-form" action="https://handlesubs.sengtailee.workers.dev/" method="POST">
+                    <input type="email" id="email" name="email" placeholder="yourmail@mail.com" required>
+                    <button type="submit">Subscribe</button>
                 </form>
             </div>
         </div>
         <div class="divider"></div>
         <div class="footnote">
-            <h4 style="font-family:Times New Roman"><I><B>"A masterpiece of creation, forged in the fires of inspiration, a testament to human ingenuity."</B></I></h4>
+            <h4 style="font-family:Times New Roman"><i><b>"A masterpiece of creation, forged in the fires of inspiration, a testament to human ingenuity."</b></i></h4>
             <p>Copyright © Edward ST Lee, 2024</p>
             <p>All rights reserved</p>
             <p>Design and Build by Edward ST Lee</p>
@@ -160,7 +160,7 @@
 
         var email = document.getElementById('email').value;
         if (email) {
-            // Add any validation here if needed
+            // Perform any additional validation if needed
             this.submit(); // Submit the form if the email is valid
         } else {
             alert("Please enter a valid email address.");
