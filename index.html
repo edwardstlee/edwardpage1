@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us</title>
+    <title>Edward ST Lee</title>
+    <!-- Favicon Link -->
+    <link rel="icon" href="edward.ico" type="image/x-icon">
     <style>
         body {
             font-family: "Times New Roman", serif;
@@ -22,8 +24,8 @@
             background-color: #994EA1;
             border-radius: 10px;
             padding: 30px;
-            width: 90%; /* Fitting to 90% of the screen width */
-            height: 70%; /* Increased height to 70% of the screen */
+            width: 80%; /* Fitting to 90% of the screen width */
+            height: 60%; /* Increased height to 70% of the screen */
             max-width: 900px; /* Adjust this for larger screens */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -126,6 +128,19 @@
             border-bottom: 1px solid #ccc;
             width: 100%;
         }
+        #visitorCounter {
+            font-size: 12px; /* Adjusted for smaller font */
+            color: #FFF1A3; /* Same color as the heading */
+        }
+        #countdown {
+            background-color: #994EA1; /* Match background with the rectangle */
+            border: 2px solid #FFF1A3; /* Framed border */
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0; /* Margin to separate from other elements */
+            font-size: 24px;
+            color: #FFF1A3; /* Same color as "Keep in touch!" */
+        }
     </style>
 </head>
 <body>
@@ -145,16 +160,48 @@
             </div>
         </div>
         <div class="divider"></div>
+        <div id="countdown"></div> <!-- Countdown timer moved into a new DIV -->
         <div class="footnote">
-            <h4 style="font-family:Times New Roman"><i><b>"A masterpiece of creation, forged in the fires of inspiration, a testament to human ingenuity."</b></i></h4>
+            <div id="quote" style="font-family:Times New Roman"><i><b>"A masterpiece of creation, forged in the fires of inspiration, a testament to human ingenuity."</b></i></div>
             <p>Copyright © Edward ST Lee, 2024</p>
             <p>All rights reserved</p>
             <p>Design and Build by Edward ST Lee</p>
+            <div id="visitorCounter">Visitors: 0</div> <!-- Visitor counter positioned below the footer -->
         </div>
     </div>
 </div>
 
 <script>
+    // Visitor Counter
+    const visitorCounter = document.getElementById('visitorCounter');
+    let visitors = localStorage.getItem('visitorCount') || 0;
+    visitors++;
+    localStorage.setItem('visitorCount', visitors);
+    visitorCounter.textContent = `Visitors: ${visitors}`;
+
+    // Countdown Timer
+    const countdown = document.getElementById('countdown');
+    const launchDate = new Date("2024-11-20T00:00:00").getTime(); // Set your launch date here
+
+    const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if (distance < 0) {
+            countdown.textContent = "The book is launched!";
+            clearInterval(timer);
+        } else {
+            countdown.textContent = `Time Until eBook Launch: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+    };
+
+    const timer = setInterval(updateCountdown, 1000);
+
     document.getElementById('subscription-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
 
