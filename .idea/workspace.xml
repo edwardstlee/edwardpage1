@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b91a1921-1b32-490a-95a2-848dd6114f1b" name="Changes" comment="added 2 new feature, visitor counter and a countdown timer" />
+    <list default="true" id="b91a1921-1b32-490a-95a2-848dd6114f1b" name="Changes" comment="added 2 new feature, visitor counter and a countdown timer">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -142,7 +144,71 @@
       <option name="project" value="LOCAL" />
       <updated>1729425888460</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added 2 new feature, visitor counter and a countdown timer">
+      <option name="closed" value="true" />
+      <created>1729550793738</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729550793738</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added 2 new feature, visitor counter and a countdown timer">
+      <option name="closed" value="true" />
+      <created>1729550871349</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729550871349</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added 2 new feature, visitor counter and a countdown timer">
+      <option name="closed" value="true" />
+      <created>1729551019625</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729551019625</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added 2 new feature, visitor counter and a countdown timer">
+      <option name="closed" value="true" />
+      <created>1729551122494</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1729551122494</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added 2 new feature, visitor counter and a countdown timer">
+      <option name="closed" value="true" />
+      <created>1729551332635</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729551332635</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added 2 new feature, visitor counter and a countdown timer">
+      <option name="closed" value="true" />
+      <created>1729551414365</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729551414365</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added 2 new feature, visitor counter and a countdown timer">
+      <option name="closed" value="true" />
+      <created>1729551464977</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1729551464977</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added 2 new feature, visitor counter and a countdown timer">
+      <option name="closed" value="true" />
+      <created>1729551504986</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1729551504986</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
